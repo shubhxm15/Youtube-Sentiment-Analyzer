@@ -1,0 +1,146 @@
+.sentiment-dashboard {
+  margin-bottom: 2rem;
+}
+
+.dash-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dash-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.verdict-pill {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.verdict-positive {
+  background: rgba(78, 205, 196, 0.1);
+  color: var(--positive);
+  border: 1px solid rgba(78, 205, 196, 0.2);
+}
+
+.verdict-negative {
+  background: rgba(255, 107, 74, 0.1);
+  color: var(--negative);
+  border: 1px solid rgba(255, 107, 74, 0.2);
+}
+
+.verdict-neutral {
+  background: rgba(232, 179, 65, 0.1);
+  color: var(--neutral);
+  border: 1px solid rgba(232, 179, 65, 0.2);
+}
+
+.verdict-total {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+/* Cards */
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.dash-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.75rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+  transition: border-color var(--transition), transform 0.25s ease;
+}
+
+.dash-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+/* Circular ring wrapper */
+.dash-card-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress {
+  display: block;
+}
+
+.dash-card-pct {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.dash-card-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.dash-card-count {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.65rem;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.dash-card-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Proportion bar */
+.dash-card-bar-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.dash-card-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  width: 0%;
+}
+
+@media (max-width: 700px) {
+  .dash-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .dash-header {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,30 @@
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 1.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.loading-track {
+  width: 200px;
+  height: 2px;
+  background: var(--border-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loading-bar {
+  width: 40%;
+  height: 100%;
+  background: var(--accent-warm);
+  border-radius: 2px;
+  animation: slideProgress 1.4s ease-in-out infinite;
+}
+
+.loading-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: opacity 0.3s ease;
+}
